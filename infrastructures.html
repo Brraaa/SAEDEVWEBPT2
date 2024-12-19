@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Paris 2024</title>
+  <link href="style.css" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="Image/LogoLa.png" />
+</head>
+
+<body>
+  <button class="translate-btn" onclick="toggleTranslation()">Traduire en français</button>
+
+  <script>
+    let currentLanguage = "english";
+
+    function toggleTranslation() {
+      const translations = {
+        english: {
+          headerTitle: "Paris 2024",
+          nav: ["Home", "Infrastructures", "Transports Network", "Sports", "Sustainable achievements", "Sustainable Future Transports", "Impact on the population", "On site", "Annexes"],
+          sections: [
+            {
+              title: "An Olympic Village ?",
+              text: "The Olympic Village for the 2024 Games covers 50 hectares and has a capacity to accommodate 14,000 athletes. Inside, you can find various facilities for their comfort: Athletes' Housing, Medical Center and Health Facilities, Leisure and Recreation Areas, Sports Training Facilities, Dining, Relaxation and Cultural Spaces, Media Center."
+            },
+            {
+              title: "An Example !",
+              text: "Here, for example, there's a volleyball court next to the Eiffel Tower, which is a monument here in France, and we could take inspiration from this infrastructure to build one with the same idea on the beaches of Los Angeles."
+            },
+            {
+              title: "Games For Sustainability",
+              text: "Paris decided to use existing infrastructures to host the games. Indeed, 95% of the facilities for the Olympics were already in place and will continue to be used afterwards. Thanks to this, the 2024 Olympics will be ingrained in Paris' iconic sports infrastructures and will leave a unique legacy."
+            }
+          ],
+          buttonText: "Traduire en français"
+        },
+        french: {
+          headerTitle: "Paris 2024",
+          nav: ["Accueil", "Infrastructures", "Réseau de Transports", "Sports", "Réalisations pérennes", "Transports Futur Durable", "Impact sur la populations", "Sur place", "Annexes"],
+          sections: [
+            {
+              title: "Un Village Olympique ?",
+              text: "Le village olympique pour les JO 2024 s’étend sur 50 hectares et a une capacité d’hébergement de 14 000 athlètes. À l’intérieur, on peut retrouver différentes infrastructures pour leur confort : Logements des Athlètes, Centre Médical et Installations de Santé, Zones de Détente et de Loisirs, Infrastructures Sportives d’Entraînement, Restauration, Espaces de Détente et de Culture, Centre des Médias."
+            },
+            {
+              title: "Un Exemple !",
+              text: "Ici, par exemple, il y a un terrain de volleyball à côté de la Tour Eiffel, qui est un monument ici en France, et nous pourrions nous inspirer de cette infrastructure pour en construire un avec la même idée sur les plages de Los Angeles."
+            },
+            {
+              title: "Durabilité",
+              text: "Paris a décidé d’utiliser les infrastructures déjà présentes pour accueillir les jeux. En effet, 95 % des aménagements pour les JO étaient déjà existants et pourront continuer à être utilisés par la suite. Grâce à cela, les JO 2024 seront gravés dans les infrastructures sportives emblématiques de Paris et laisseront un héritage unique."
+            }
+          ],
+          buttonText: "Traduire en anglais"
+        }
+      };
+
+      const lang = translations[currentLanguage];
+
+      // Mise à jour des titres et navigation
+      document.querySelector("h1").innerText = lang.headerTitle;
+      const navItems = document.querySelectorAll("nav ul li a");
+      navItems.forEach((item, index) => {
+        item.innerText = lang.nav[index];
+      });
+
+      // Mise à jour des sections
+      const legends = document.querySelectorAll("legend h2");
+      const paragraphs = document.querySelectorAll("fieldset p");
+      lang.sections.forEach((section, index) => {
+        legends[index].innerText = section.title;
+        paragraphs[index].innerText = section.text;
+      });
+
+      // Mise à jour du bouton
+      document.querySelector(".translate-btn").innerText = lang.buttonText;
+
+      // Changement de langue
+      currentLanguage = currentLanguage === "english" ? "french" : "english";
+    }
+  </script>
+
+  <header>
+    <a href="index.html">
+      <img src="Image/logoo.png" id="logo" alt="logo" />
+    </a>
+    <h1>Paris 2024</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infrastructures.html">Infrastructures</a></li>
+        <li><a href="transports.html">Transports Network</a></li>
+        <li><a href="sports.html">Sports</a></li>
+        <li><a href="perennes.html">Sustainable achievements</a></li>
+        <li><a href="transportsFuturDurable.html">Sustainable Future Transports</a></li>
+        <li><a href="impactHabitant.html">Impact on the population</a></li>
+        <li><a href="surPlace.html">On site</a></li>
+        <li><a href="annexes.html">Annexes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <fieldset>
+    <legend>
+      <h2>An Olympic Village ?</h2>
+    </legend>
+    <p>
+      The Olympic Village for the 2024 Games covers 50 hectares and has a capacity to accommodate 14,000 athletes. Inside, you can find various facilities for their comfort: Athletes' Housing, Medical Center and Health Facilities, Leisure and Recreation Areas, Sports Training Facilities, Dining, Relaxation and Cultural Spaces, Media Center.
+    </p>
+    <section class="Village">
+      <img src="Image/village.png" alt="image du village olympique" id="Hollywood" />
+    </section>
+  </fieldset>
+
+  <fieldset>
+    <legend>
+      <h2>An Example!</h2>
+    </legend>
+    <p>
+      Here, for example, there's a volleyball court next to the Eiffel Tower, which is a monument here in France, and we could take inspiration from this infrastructure to build one with the same idea on the beaches of Los Angeles.
+    </p>
+    <section class="align">
+      <img src="Image/tourEiffel.jpg" alt="image de la Tour Eiffel" id="plageLa" />
+      <img src="Image/plageLa.jpg" alt="image plage de Los Angeles" id="plageLa" />
+    </section>
+  </fieldset>
+
+  <fieldset>
+    <legend>
+      <h2>Games For Sustainability</h2>
+    </legend>
+    <p>
+      Paris decided to use existing infrastructures to host the games. Indeed, 95% of the facilities for the Olympics were already in place and will continue to be used afterwards. Thanks to this, the 2024 Olympics will be ingrained in Paris' iconic sports infrastructures and will leave a unique legacy.
+    </p>
+    <section class="align">
+      <img src="Image/stade.jpg" alt="image du stade"  id="plageLa"/>
+      <img src="Image/Arena.jpg" alt="image de l'arène" id="plageLa" />
+    </section>
+  </fieldset>
+
+  <footer>
+    © Paris 2024 Olympic Games
+  </footer>
+</body>
+
+</html>

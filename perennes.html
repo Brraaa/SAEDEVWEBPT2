@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Paris 2024</title>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="Image/LogoLa.png" />
+  </head>
+
+  <body>
+    <button class="translate-btn" onclick="toggleTranslation()">Traduire en français</button>
+    <header>
+      <a href="index.html">
+        <img src="Image/logoo.png" id="logo" alt="logo"/>
+      </a>
+      <h1 id="header-title">Paris 2024</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" id="nav-home">Home</a></li>
+          <li><a href="infrastructures.html" id="nav-infra">Infrastructures</a></li>
+          <li><a href="transports.html" id="nav-transports">Transports Network</a></li>
+          <li><a href="sports.html" id="nav-sports">Sports</a></li>
+          <li><a href="perennes.html" id="nav-achievements">Sustainable achievements</a></li>
+          <li><a href="transportsFuturDurable.html" id="nav-durable">Sustainable Future Transports</a></li>
+          <li><a href="impactHabitant.html" id="nav-population">Impact on the population</a></li>
+          <li><a href="surPlace.html" id="nav-surPlace">On site</a></li>
+          <li><a href="annexes.html" id="nav-Annexes">Annexes</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <fieldset>
+      <legend>
+        <h2 id="welcome-title">Buildings</h2>
+      </legend>
+      <p id="welcome-text">
+        During the Paris 2024 Olympics, many buildings have been built and kept, and often will be reused for sporting purposes, examples below:
+      </p>
+
+      <section class="transports">
+        <img src="Image/Aviron.jpg" id="transports2" alt="Rowing Complex"/>
+        <img src="Image/Piscine.jpg" id="transports2" alt="Olympic Swimming Pool"/>
+      </section>
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        <h2 id="reuse-title">Reuse of certain structures</h2>
+      </legend>
+      <p id="reuse-text">
+        Let's take the rowing complex as an example: this complex will be reused as a training facility for members of the local club (Vaires-sur-Marne), so this construction will have a long-term rather than a short-term usefulness.
+      </p>
+
+      <section class="transports">
+        <img src="Image/Aviron.jpg" id="transports2" alt="Rowing Complex"/>
+        <img src="Image/Vaires.png" id="transports2" alt="Vaires-sur-Marne Complex"/>
+      </section>
+    </fieldset>
+
+    <footer> © Paris 2024 Olympic Games</footer>
+
+    <script>
+      let currentLanguage = 'english';
+
+      function toggleTranslation() {
+        if (currentLanguage === 'english') {
+          // Traduire en français
+          document.getElementById('header-title').innerText = 'Paris 2024';
+          document.getElementById('nav-home').innerText = 'Accueil';
+          document.getElementById('nav-infra').innerText = 'Infrastructures';
+          document.getElementById('nav-transports').innerText = 'Réseau de transports';
+          document.getElementById('nav-sports').innerText = 'Sports';
+          document.getElementById('nav-achievements').innerText = 'Réalisations pérennes';
+          document.getElementById('nav-durable').innerText = 'Transports Futur Durable';
+          document.getElementById('nav-population').innerText = 'Impact sur la population';
+          document.getElementById('nav-surPlace').innerText = 'Sur place';
+          document.getElementById('nav-Annexes').innerText = 'Annexes';
+
+          document.getElementById('welcome-title').innerText = 'Bâtiments';
+          document.getElementById('welcome-text').innerText = `Pendant les Jeux Olympiques de Paris 2024, de nombreux bâtiments ont été construits et conservés, et seront souvent réutilisés à des fins sportives, comme illustré ci-dessous :`;
+
+          document.getElementById('reuse-title').innerText = 'Réutilisation de certaines structures';
+          document.getElementById('reuse-text').innerText = `Prenons l'exemple du complexe d'aviron : ce complexe sera réutilisé comme centre d'entraînement pour les membres du club local (Vaires-sur-Marne), cette construction a une utilité à long terme plutôt qu'à court terme.`;
+
+          document.querySelector('.translate-btn').innerText = 'Traduire en anglais';
+          currentLanguage = 'french';
+        } else {
+          // Traduire en anglais
+          document.getElementById('header-title').innerText = 'Paris 2024';
+          document.getElementById('nav-home').innerText = 'Home';
+          document.getElementById('nav-infra').innerText = 'Infrastructures';
+          document.getElementById('nav-transports').innerText = 'Transport Network';
+          document.getElementById('nav-sports').innerText = 'Sports';
+          document.getElementById('nav-achievements').innerText = 'Sustainable achievements';
+          document.getElementById('nav-durable').innerText = 'Sustainable Future Transports';
+          document.getElementById('nav-population').innerText = 'Impact on the Population';
+          document.getElementById('nav-surPlace').innerText = 'On site';
+          document.getElementById('nav-Annexes').innerText = 'Annexes';
+
+          document.getElementById('welcome-title').innerText = 'Buildings';
+          document.getElementById('welcome-text').innerText = `During the Paris 2024 Olympics, many buildings were built and kept, and will often be reused for sporting purposes, as illustrated below:`;
+
+          document.getElementById('reuse-title').innerText = 'Reuse of Certain Structures';
+          document.getElementById('reuse-text').innerText = `Let's take the rowing complex as an example: this complex will be reused as a training facility for members of the local club (Vaires-sur-Marne), so this construction will have long-term rather than short-term usefulness.`;
+
+          document.querySelector('.translate-btn').innerText = 'Traduire en français';
+          currentLanguage = 'english';
+        }
+      }
+    </script>
+  </body>
+</html>

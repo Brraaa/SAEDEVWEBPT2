@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Paris 2024</title>
+  <link href="style.css" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="Image/LogoLa.png" />
+</head>
+
+<body>
+  <button class="translate-btn" onclick="toggleTranslation()">Traduire en français</button>
+
+  <script>
+    let currentLanguage = "english";
+
+    function toggleTranslation() {
+      const translations = {
+        english: {
+          headerTitle: "Paris 2024",
+          nav: ["Home", "Infrastructures", "Transports Network", "Sports", "Sustainable achievements", "Sustainable Future Transports", "Impact on the population", "On site", "Annexes"],
+          sections: [
+            {
+              title: "Reluctance of the inhabitants",
+              points: [
+                "Environmental impact : Fears related to the destruction of natural spaces or pollution due to projects that will be realized.",
+                "Increase in the cost of living : Risks of higher taxes, rents or local prices impacting household budgets.",
+                "Disturbance during construction : Noise, traffic jams and discomfort to residents during the construction phase."
+              ]
+            },
+            {
+              title: "Benefits highlighted by elected representatives",
+              points: [
+                "Improvement of local infrastructure : Development or renovation of roads, public spaces and urban facilities.",
+                "Job creation : Short and long-term economic opportunities through project activities.",
+                "Strengthening the attractiveness of the territory : Increase in tourism or economic investment in the region.",
+                "Ecological transition and modernization : Promoting sustainable solutions and innovations for a more environmentally friendly way of life."
+              ]
+            }
+          ],
+          caption: "The ground of the Olympic Games nautical stadium in Vaires-sur-Marne under construction",
+          buttonText: "Traduire en français"
+        },
+        french: {
+          headerTitle: "Paris 2024",
+          nav: ["Accueil", "Infrastructures", "Réseau de Transports", "Sports", "Réalisations pérennes", "Transports Durables Futurs", "Impact sur la population", "Sur place", "Annexes"],
+          sections: [
+            {
+              title: "Réticences des habitants",
+              points: [
+                "Impact environnemental : Craintes liées à la destruction des espaces naturels ou à la pollution engendrée par les projets réalisés.",
+                "Augmentation du coût de la vie : Risques de hausses d'impôts, loyers ou prix locaux impactant le budget des ménages.",
+                "Nuisances pendant les travaux : Bruit, embouteillages et inconfort pour les habitants durant la phase de construction."
+              ]
+            },
+            {
+              title: "Avantages soulignés par les élus",
+              points: [
+                "Amélioration des infrastructures locales : Développement ou rénovation des routes, espaces publics et équipements urbains.",
+                "Création d'emplois : Opportunités économiques à court et long terme grâce aux activités liées au projet.",
+                "Renforcement de l'attractivité du territoire : Augmentation du tourisme ou des investissements économiques dans la région.",
+                "Transition écologique et modernisation : Promotion de solutions durables et innovations pour un mode de vie plus respectueux de l'environnement."
+              ]
+            }
+          ],
+          caption: "Le terrain du stade nautique des Jeux Olympiques à Vaires-Sur-Marne en construction",
+          buttonText: "Traduire en anglais"
+        }
+      };
+
+      const lang = translations[currentLanguage];
+
+      // Mise à jour des titres et navigation
+      document.querySelector("h1").innerText = lang.headerTitle;
+      const navItems = document.querySelectorAll("nav ul li a");
+      navItems.forEach((item, index) => {
+        item.innerText = lang.nav[index];
+      });
+
+      // Mise à jour des sections
+      const sectionTitles = document.querySelectorAll("fieldset legend h2");
+      const sectionTexts = document.querySelectorAll("fieldset ul");
+      lang.sections.forEach((section, index) => {
+        sectionTitles[index].innerText = section.title;
+        sectionTexts[index].innerHTML = section.points
+          .map(point => `<li>${point}</li>`)
+          .join("");
+      });
+
+      // Mise à jour de la légende
+      document.getElementById("commentaire").innerText = lang.caption;
+
+      // Mise à jour du bouton
+      document.querySelector(".translate-btn").innerText = lang.buttonText;
+
+      // Changement de langue
+      currentLanguage = currentLanguage === "english" ? "french" : "english";
+    }
+  </script>
+
+  <header>
+    <a href="index.html">
+      <img src="Image/logoo.png" id="logo" alt="logo"/>
+    </a>
+    <h1>Paris 2024</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infrastructures.html">Infrastructures</a></li>
+        <li><a href="transports.html">Transports Network</a></li>
+        <li><a href="sports.html">Sports</a></li>
+        <li><a href="perennes.html">Sustainable achievements</a></li>
+        <li><a href="transportsFuturDurable.html">Sustainable Future Transports</a></li>
+        <li><a href="impactHabitant.html">Impact on the population</a></li>
+        <li><a href="surPlace.html">On site</a></li>
+        <li><a href="annexes.html">Annexes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <fieldset>
+    <legend>
+      <h2>Reluctance of the inhabitants</h2>
+    </legend>
+    <ul id="ecriture">
+      <li>Environmental impact : Fears related to the destruction of natural spaces or pollution due to projects that will be realized.</li>
+      <li>Increase in the cost of living : Risks of higher taxes, rents or local prices impacting household budgets.</li>
+      <li>Disturbance during construction : Noise, traffic jams and discomfort to residents during the construction phase.</li>
+    </ul>
+    <section class="transports">
+      <img src="Image/NonJo.jpg" alt="Opposition to Olympics" id="NonJO">
+    </section>
+  </fieldset>
+
+  <fieldset>
+    <legend>
+      <h2>Benefits highlighted by elected representatives</h2>
+    </legend>
+    <ul id="ecriture">
+      <li>Improvement of local infrastructure : Development or renovation of roads, public spaces and urban facilities.</li>
+      <li>Job creation : Short and long-term economic opportunities through project activities.</li>
+      <li>Strengthening the attractiveness of the territory : Increase in tourism or economic investment in the region.</li>
+      <li>Ecological transition and modernization : Promoting sustainable solutions and innovations for a more environmentally friendly way of life.</li>
+    </ul>
+    <section class="transports">
+      <img src="Image/JOLumiere.jpg" id="transports2" alt="Olympic lights">
+      <img src="Image/VaireCentre.jpeg" id="transports2" alt="Vaire Centre">
+      <figcaption id="commentaire">The ground of the Olympic Games nautical stadium in Vaires-sur-Marne under construction</figcaption>
+    </section>
+  </fieldset>
+
+  <footer>© Paris 2024 Olympic Games</footer>
+</body>
+</html>

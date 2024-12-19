@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Paris 2024</title>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="Image/LogoLa.png" />
+  </head>
+  
+  <body>
+    <button class="translate-btn" onclick="toggleTranslation()">Traduire en français</button>
+
+    <script>
+      let currentLanguage = "english";
+
+      function toggleTranslation() {
+        const translations = {
+          english: {
+            headerTitle: "Paris 2024",
+            nav: ["Home", "Infrastructures", "Transports Network", "Sports", "Sustainable achievements", "Sustainable Future Transports", "Impact on the population", "On site", "Annexes"],
+            sections: [
+              {
+                title: "Fall Cars",
+                text: "Autonomous cars represent a major technological innovation in the automotive industry. They use advanced systems combining artificial intelligence (AI), sensors, cameras, radars and communication technologies to drive without a driver. Sensors (cameras, radars) detect things around the vehicle, including other vehicles, pedestrians, obstacles and road conditions. Deep learning (AI) and AI algorithms enable the vehicle to understand data collected, predict other road users' behaviour and choose safe routes. Autonomous cars can exchange information between them (Vehicle-to-Vehicle, or V2V) and with infrastructures (Vehicle-to-Infrastructure, or V2I). This improves traffic coordination and reduces the risk of accidents."
+              },
+              {
+                title: "Electric Bus",
+                text: "RATP is already committed to a major technological and ecological evolution in 2014, which will make them world leaders, with all 25 bus centres converted to electric and biomethane by 2025. By the end of 2024, bus2025 will reduce CO2 emissions from bus traffic by 50%. 2000 electric and biomethane buses started running in spring 2024. 500 buses per year will be put into service between 2022 and 2024."
+              }
+            ],
+            buttonText: "Traduire en français",
+          },
+          french: {
+            headerTitle: "Paris 2024",
+            nav: ["Accueil", "Infrastructures", "Réseau de Transports", "Sports", "Réalisations pérennes", "Transports Durables Futurs", "Impact sur la populations", "Sur place", "Annexes"],
+            sections: [
+              {
+                title: "Voitures Autonomes",
+                text: "Les voitures autonomes représentent une innovation technologique majeure dans l'industrie automobile. Elles utilisent des systèmes avancés combinant intelligence artificielle (IA), capteurs, caméras, radars et technologies de communication pour conduire sans conducteur. Les capteurs (caméras, radars) détectent les objets autour du véhicule, y compris les autres véhicules, les piétons, les obstacles et les conditions de la route. L'apprentissage profond (IA) et les algorithmes d'IA permettent au véhicule de comprendre les données collectées, de prédire le comportement des autres usagers de la route et de choisir des itinéraires sécurisés. Les voitures autonomes peuvent échanger des informations entre elles (Vehicle-to-Vehicle ou V2V) et avec les infrastructures (Vehicle-to-Infrastructure ou V2I). Cela améliore la coordination du trafic et réduit le risque d'accidents."
+              },
+              {
+                title: "Bus Électriques",
+                text: "La RATP s'est déjà engagée dans une évolution technologique et écologique majeure dès 2014, ce qui les placera en tant que leaders mondiaux, avec les 25 centres bus entièrement convertis à l'électrique et au biométhane d'ici 2025. À la fin de 2024, le projet bus2025 aura réduit de 50% les émissions de CO2 du trafic bus. 2000 bus électriques et au biométhane ont commencé à circuler au printemps 2024. 500 bus par an seront mis en service entre 2022 et 2024."
+              }
+            ],
+            buttonText: "Traduire en anglais",
+          }
+        };
+
+        const lang = translations[currentLanguage];
+
+        // Mise à jour des textes principaux
+        document.getElementById("header-title").innerText = lang.headerTitle;
+
+        // Mise à jour de la navigation
+        const navItems = document.querySelectorAll("nav ul li a");
+        navItems.forEach((item, index) => {
+          item.innerText = lang.nav[index];
+        });
+
+        // Mise à jour des sections
+        const sectionTitles = document.querySelectorAll("legend h2");
+        const sectionTexts = document.querySelectorAll("fieldset p");
+        lang.sections.forEach((section, index) => {
+          sectionTitles[index].innerText = section.title;
+          sectionTexts[index].innerText = section.text;
+        });
+
+        // Mise à jour du bouton
+        document.querySelector(".translate-btn").innerText = lang.buttonText;
+
+        // Changement de langue
+        currentLanguage = currentLanguage === "english" ? "french" : "english";
+      }
+    </script>
+
+    <header>
+      <a href="index.html">
+        <img src="Image/logoo.png" id="logo" alt="logo" />
+      </a>
+      <h1 id="header-title">Paris 2024</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" id="nav-home">Home</a></li>
+          <li><a href="infrastructures.html" id="nav-infra">Infrastructures</a></li>
+          <li><a href="transports.html" id="nav-transports">Transports Network</a></li>
+          <li><a href="sports.html" id="nav-sports">Sports</a></li>
+          <li><a href="perennes.html" id="nav-achievements">Sustainable achievements</a></li>
+          <li><a href="transportsFuturDurable.html" id="nav-durable">Sustainable Future Transports</a></li>
+          <li><a href="impactHabitant.html" id="nav-population">Impact on the population</a></li>
+          <li><a href="surPlace.html">On site</a></li>
+          <li><a href="annexes.html">Annexes</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <fieldset>
+      <legend>
+        <h2>Fall Cars</h2>
+      </legend>
+      <p>
+        Autonomous cars represent a major technological innovation in the automotive industry. They use advanced systems combining artificial intelligence (AI), sensors, cameras, radars and communication technologies to drive without a driver. Sensors (cameras, radars) detect things around the vehicle, including other vehicles, pedestrians, obstacles and road conditions. Deep learning (AI) and AI algorithms enable the vehicle to understand data collected, predict other road users' behaviour and choose safe routes. Autonomous cars can exchange information between them (Vehicle-to-Vehicle, or V2V) and with infrastructures (Vehicle-to-Infrastructure, or V2I). This improves traffic coordination and reduces the risk of accidents.
+      </p>
+
+      <section class="transports">
+        <img src="Image/voitureAutomne.jpg" id="transports2" alt="Autonomous car"/>
+        <img src="Image/voitureAutomne2.jpeg" id="transports2" alt="Autonomous car technology"/>
+      </section>
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        <h2>Electric Bus</h2>
+      </legend>
+      <p>
+        RATP is already committed to a major technological and ecological evolution in 2014, which will make them world leaders, with all 25 bus centres converted to electric and biomethane by 2025. By the end of 2024, bus2025 will reduce CO2 emissions from bus traffic by 50%. 2000 electric and biomethane buses started running in spring 2024. 500 buses per year will be put into service between 2022 and 2024.
+      </p>
+
+      <section class="transports">
+        <img src="Image/Bus.jpg" id="transports2" alt="Electric bus"/>
+        <img src="Image/Bus2.jpg" id="transports2" alt="Electric bus technology"/>
+      </section>
+    </fieldset>
+
+    <footer>© Paris 2024 Olympic Games</footer>
+  </body>
+</html>

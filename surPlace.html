@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Paris 2024</title>
+  <link href="style.css" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="Image/LogoLa.png" />
+</head>
+
+<body>
+  <button class="translate-btn" onclick="toggleTranslation()">Traduire en français</button>
+
+  <script>
+    let currentLanguage = "english";
+
+    function toggleTranslation() {
+      const translations = {
+        english: {
+          headerTitle: "Paris 2024",
+          nav: [
+            "Home",
+            "Infrastructures",
+            "Transports Network",
+            "Sports",
+            "Sustainable achievements",
+            "Sustainable Future Transports",
+            "Impact on the population",
+            "On site",
+            "Annexes"
+          ],
+          sections: [
+            {
+              title: "Some image on site",
+              images: [
+                "1st image: Here we are at the Olympic village, finally :)",
+                "2nd image: Hey push you, you’re messing up the photo !",
+                "3rd image: Yes the famous and beautiful Stade de France !"
+              ]
+            },
+            {
+              title: "Some image on site",
+              images: [
+                "4th image: Hello trains !",
+                "5th image: A chronological bridge"
+              ]
+            }
+          ],
+          buttonText: "Traduire en français"
+        },
+        french: {
+          headerTitle: "Paris 2024",
+          nav: [
+            "Accueil",
+            "Infrastructures",
+            "Réseau de Transports",
+            "Sports",
+            "Réalisations pérennes",
+            "Transports Durables Futurs",
+            "Impact sur la population",
+            "Sur place",
+            "Annexes"
+          ],
+          sections: [
+            {
+              title: "Quelques images sur place",
+              images: [
+                "1ère image : Nous voici au village olympique, enfin :)",
+                "2ème image : Hé poussez vous, vous gachez la photo ! ",
+                "3ème image : Oui, le célèbre et magnifique Stade de France !"
+              ]
+            },
+            {
+              title: "Quelques images sur place",
+              images: [
+                "4ème image : Bonjour les trains !",
+                "5ème image : Un pont chronologique"
+              ]
+            }
+          ],
+          buttonText: "Traduire en anglais"
+        }
+      };
+
+      const lang = translations[currentLanguage];
+
+      // Mise à jour du titre principal
+      document.getElementById("header-title").innerText = lang.headerTitle;
+
+      // Mise à jour de la navigation
+      const navItems = document.querySelectorAll("nav ul li a");
+      navItems.forEach((item, index) => {
+        item.innerText = lang.nav[index];
+      });
+
+      // Mise à jour des sections
+      const sectionTitles = document.querySelectorAll("fieldset legend h2");
+      const imageLists = document.querySelectorAll("fieldset ul");
+      lang.sections.forEach((section, index) => {
+        sectionTitles[index].innerText = section.title;
+        imageLists[index].innerHTML = section.images
+          .map(image => `<li>${image}</li>`)
+          .join("");
+      });
+
+      // Mise à jour du texte du bouton
+      document.querySelector(".translate-btn").innerText = lang.buttonText;
+
+      // Changement de langue
+      currentLanguage = currentLanguage === "english" ? "french" : "english";
+    }
+  </script>
+
+  <header>
+    <a href="index.html">
+      <img src="Image/logoo.png" id="logo" alt="logo"/>
+    </a>
+    <h1 id="header-title">Paris 2024</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infrastructures.html">Infrastructures</a></li>
+        <li><a href="transports.html">Transports Network</a></li>
+        <li><a href="sports.html">Sports</a></li>
+        <li><a href="perennes.html">Sustainable achievements</a></li>
+        <li><a href="transportsFuturDurable.html">Sustainable Future Transports</a></li>
+        <li><a href="impactHabitant.html">Impact on the population</a></li>
+        <li><a href="surPlace.html">On site</a></li>
+        <li><a href="annexes.html">Annexes</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <fieldset>
+    <legend>
+      <h2>Some image on site</h2>
+    </legend>
+    <section>
+      <img src="Image/VillageSurPlace.jpg" alt="Paris 2024" id="imageSurPlace"/>
+      <img src="Image/GarePleyel.jpg" alt="Paris 2024" id="imageSurPlace"/>
+      <img src="Image/StadeFranceSurPlace.jpg" alt="Paris 2024" id="imageSurPlace"/>
+    </section>
+    <ul id="ecriture">
+      <li>1st image : Here we are at the Olympic village, finally :)</li>
+      <li>2nd image : Hey push you, you’re messing up the photo ! </li>
+      <li>3rd image : Yes the famous and beautiful Stade de France !</li>
+    </ul>
+  </fieldset>
+
+  <fieldset>
+    <legend>
+      <h2>Some image on site</h2>
+    </legend>
+    <section>
+      <img src="Image/GareSurPlace.jpg" alt="Paris 2024" id="imageSurPlace2"/>
+      <img src="Image/PontGareSurPlace.jpg" alt="Paris 2024" id="imageSurPlace2"/>
+    </section>
+    <ul id="ecriture">
+      <li>4th image : Hello trains !</li>
+      <li>5th image : A chronological bridge</li>
+    </ul>
+  </fieldset>
+
+  <footer>© Paris 2024 Olympic Games</footer>
+</body>
+</html>

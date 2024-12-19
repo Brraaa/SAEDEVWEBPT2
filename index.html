@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Paris 2024</title>
+  <link href="style.css" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="Image/LogoLa.png" />
+</head>
+
+<body>
+  <button class="translate-btn" onclick="toggleTranslation()">Traduire en français</button>
+
+  <script>
+    let currentLanguage = "english";
+
+    function toggleTranslation() {
+      const translations = {
+        english: {
+          headerTitle: "Paris 2024",
+          nav: ["Home", "Infrastructures", "Transports Network", "Sports", "Sustainable achievements", "Sustainable Future Transports", "Impact on the population", "On site", "Annexes"],
+          welcomeTitle: "Welcome",
+          welcomeText: "Paris 2024 is coming soon! Get ready to experience the magic of the Olympic Games where sport and culture meet for a unique event.",
+          infoTitle: "Information",
+          infoText: "Latest competition results:",
+          buttonText: "Traduire en français"
+        },
+        french: {
+          headerTitle: "Paris 2024",
+          nav: ["Accueil", "Infrastructures", "Réseau de Transports", "Sports", "Réalisations pérennes", "Transports Futur Durable", "Impact sur la populations", "Sur place", "Annexes"],
+          welcomeTitle: "Bienvenue",
+          welcomeText: "Paris 2024 arrive bientôt ! Préparez-vous à vivre la magie des Jeux Olympiques où le sport et la culture se rencontrent pour un événement unique.",
+          infoTitle: "Informations",
+          infoText: "Derniers résultats des compétitions :",
+          buttonText: "Traduire en anglais"
+        }
+      };
+
+      const lang = translations[currentLanguage];
+      document.getElementById("header-title").innerText = lang.headerTitle;
+      const navItems = document.querySelectorAll("nav ul li a");
+      navItems.forEach((item, index) => {
+        item.innerText = lang.nav[index];
+      });
+      document.getElementById("welcome-title").innerText = lang.welcomeTitle;
+      document.getElementById("welcome-text").innerText = lang.welcomeText;
+      document.getElementById("info-title").innerText = lang.infoTitle;
+      document.getElementById("info-text").innerText = lang.infoText;
+      document.querySelector(".translate-btn").innerText = lang.buttonText;
+
+      currentLanguage = currentLanguage === "english" ? "french" : "english";
+    }
+  </script>
+
+  <header>
+    <a href="index.html">
+      <img src="Image/logoo.png" id="logo" alt="logo"/>
+    </a>
+    <h1 id="header-title">Paris 2024</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="infrastructures.html">Infrastructures</a></li>
+        <li><a href="transports.html">Transports Network</a></li>
+        <li><a href="sports.html">Sports</a></li>
+        <li><a href="perennes.html">Sustainable achievements</a></li>
+        <li><a href="transportsFuturDurable.html">Sustainable Future Transports</a></li>
+        <li><a href="impactHabitant.html">Impact on the population</a></li>
+        <li><a href="surPlace.html">On site</a></li>
+        <li><a href="annexes.html">Annexes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <fieldset>
+    <legend>
+      <h2 id="welcome-title">Welcome</h2>
+    </legend>
+    <p id="welcome-text">
+      Paris 2024 is coming soon! Get ready to experience the magic of the Olympic Games where sport and culture meet for a unique event.
+    </p>
+
+    <section class="JO">
+      <img src="Image/Hollywood.PNG" alt="Paris 2024" id="Hollywood" />
+    </section>
+  </fieldset>
+
+  <fieldset>
+    <legend>
+      <h2 id="info-title">Information</h2>
+    </legend>
+    <p id="info-text">Latest competition results:</p>
+
+    <section class="JO2">
+      <img src="Image/médailles.png" alt="Olympic medals" id="Hollywood" />
+    </section>
+  </fieldset>
+
+  <footer>© Paris 2024 Olympic Games</footer>
+  
+</body>
+</html>
